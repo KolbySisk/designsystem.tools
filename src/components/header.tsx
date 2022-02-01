@@ -5,22 +5,16 @@ import { siteDescription } from '~/data'
 
 export const Header: FC = () => {
   return (
-    <header className='relative box-content overflow-hidden bg-dark pb-32 pt-16' style={{ height: 793 }}>
-      <div className='absolute left-1/2 -translate-x-1/2' style={{ marginLeft: 86 }}>
+    <header className='relative box-content overflow-hidden bg-dark py-16 sm:h-[793px] sm:pb-32 sm:pt-16'>
+      <div className='absolute left-1/2 ml-[86px] hidden -translate-x-1/2 sm:block'>
         <Image alt='' src='/header-bg.png' layout='fixed' width={2135} height={793} quality={100} priority />
       </div>
-      <div className='absolute left-1/2 mt-72 flex -translate-x-1/2 flex-col items-end'>
+      <div className='flex flex-col items-center sm:absolute sm:left-1/2 sm:mt-72 sm:-translate-x-1/2 sm:items-end'>
         <div className='flex flex-col items-end'>
-          <h1 className='font-bold' style={{ fontSize: 80, lineHeight: '80px' }}>
-            designsystem
-          </h1>
-          <span className='text-gold' style={{ fontSize: 40 }}>
-            .tools
-          </span>
+          <h1 className='text-4xl font-bold leading-8 sm:text-[5rem] sm:leading-[5rem]'>designsystem</h1>
+          <span className='text-gold sm:text-[2.5rem]'>.tools</span>
         </div>
-        <p className='mt-8 border-l-4 border-gold p-4 text-xl' style={{ width: 500 }}>
-          {siteDescription}
-        </p>
+        <p className='mt-8 w-4/5 border-l-4 border-gold p-4 text-lg sm:w-[500px] sm:text-xl'>{siteDescription}</p>
       </div>
     </header>
   )

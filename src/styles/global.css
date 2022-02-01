@@ -20,15 +20,17 @@ html {
 body {
   @apply font-sans;
   @apply text-light;
-  @apply text-xl;
+  @apply md:text-xl;
 }
 h1 {
   @apply text-white;
-  @apply text-4xl;
   @apply font-bold;
+  @apply text-2xl;
+  @apply md:text-4xl;
 }
 h2 {
   @apply text-white;
-  @apply text-3xl;
   @apply font-bold;
+  @apply text-xl;
+  @apply md:text-3xl;
 }

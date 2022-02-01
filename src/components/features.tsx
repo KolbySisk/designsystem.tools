@@ -8,13 +8,13 @@ import { IconButton } from './icon-button'
 
 export const Features: FC = () => {
   return (
-    <section className='space-y-32 bg-dark py-32'>
+    <section className='space-y-16 bg-dark py-16 md:space-y-32 md:py-32'>
       <div className='container'>
-        <h1 className='mb-16'>Features of a design system</h1>
+        <h1 className='mb-8 md:mb-16'>Features of a design system</h1>
         <FeaturesNav features={features} />
       </div>
       <FeatureDisclaimer />
-      <div className='container space-y-32'>
+      <div className='container space-y-16 md:space-y-32'>
         {features.map((feature) => (
           <FeatureInfo key={feature.id} feature={feature} />
         ))}
@@ -25,7 +25,7 @@ export const Features: FC = () => {
 
 const FeatureDisclaimer: FC = () => {
   return (
-    <article className='container space-y-4 rounded-md bg-purp p-16 shadow-lg'>
+    <article className='container w-4/5 space-y-4 rounded-md bg-purp p-8 shadow-lg md:w-full md:p-16'>
       <h2>{featureDisclaimer.title}</h2>
       <p>{featureDisclaimer.description}</p>
     </article>
@@ -34,7 +34,7 @@ const FeatureDisclaimer: FC = () => {
 
 const FeaturesNav: FC<{ features: Feature[] }> = ({ features }) => {
   return (
-    <nav className='grid grid-cols-2 gap-8'>
+    <nav className='grid grid-cols-1 gap-4 md:grid-cols-2 md:gap-8'>
       {features.map((feature) => (
         <IconButton key={feature.id} icon={feature.icon} link={`#${feature.id}`}>
           {feature.title}
@@ -46,17 +46,17 @@ const FeaturesNav: FC<{ features: Feature[] }> = ({ features }) => {
 
 const FeatureInfo: FC<{ feature: Feature }> = ({ feature }) => {
   return (
-    <article id={feature.id} className='space-y-8'>
+    <article id={feature.id} className='space-y-4 md:space-y-8'>
       <FeatureHeader feature={feature} />
-      <div className='flex space-x-8'>
-        <div className='flex-1 space-y-16'>
+      <div className='flex flex-col space-y-8 md:flex-row md:space-x-8 md:space-y-0'>
+        <div className='flex-1 space-y-8 md:space-y-16'>
           <span>{feature.description}</span>
           <div className='space-y-4'>
             <h2>Features</h2>
             <FeatureFeatureList featurefeatures={feature.features} />
           </div>
         </div>
-        <div className='flex-1 space-y-16'>
+        <div className='flex-1 space-y-8 md:space-y-16'>
           {feature.tools && (
             <div className='space-y-4'>
               <h2>Tools</h2>
