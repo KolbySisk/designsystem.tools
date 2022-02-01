@@ -85,8 +85,8 @@ const FeatureHeader: FC<{ feature: Feature }> = ({ feature }) => {
       className='flex w-full items-center rounded-md border-2 border-gold p-3 hover:bg-purp'
       onClick={handleFeatureHeaderClick}
     >
-      <div className='flex h-10 w-10 items-center justify-center text-2xl'>{feature.icon}</div>
-      <p className=' mt-1 text-xl font-medium'>{feature.title}</p>
+      <div className='flex h-10 w-10 items-center justify-center text-2xl text-white'>{feature.icon}</div>
+      <h1 className=' mt-1 text-xl font-medium'>{feature.title}</h1>
     </button>
   )
 }

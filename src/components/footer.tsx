@@ -9,8 +9,9 @@ export const Footer: FC = () => {
           Kolby Sisk
         </a>
       </span>
+      <span className='text-sm opacity-50'>|</span>
       <span className='text-sm opacity-50'>
-        Heavily inspired by{' '}
+        Inspired by{' '}
         <a className='underline' href='https://monorepo.tools'>
           monorepo.tools
         </a>

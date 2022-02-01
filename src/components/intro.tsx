@@ -16,7 +16,9 @@ export const Intro: FC = () => {
               </Content>
             </div>
           </div>
-          <Image alt='' src='/intro-bg1.png' layout='fixed' width={847} height={608} quality={100} priority />
+          <div className='pointer-events-none'>
+            <Image alt='' src='/intro-bg1.png' layout='fixed' width={847} height={608} quality={100} priority />
+          </div>
         </div>
       </div>
       <div className='container relative'>

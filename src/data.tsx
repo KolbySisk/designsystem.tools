@@ -10,14 +10,26 @@ export const intro = [
     content: (
       <>
         <p>
-          We maintain this resource to help explain what design systems are, what value they provide, and the features
+          This resource is maintained to help explain what design systems are, what value they provide, and the features
           that can compose one.
         </p>
         <p>
-          There are many possible constructs for a design system, and many tools available to support the effort. We
-          will describe the most common features and recommend the best tools available. Your design system may not need
-          every feature described here. Use this information to help you compose the right design system for your
+          There are many possible constructs for a design system, and many tools available to support the effort. This
+          site will describe the most common features and recommend the best tools available. Your design system may not
+          need every feature described here. Use this information to help you compose the right design system for your
           organization.
+        </p>
+        <p>
+          Want to contribute?{' '}
+          <a
+            className='underline'
+            href='https://github.com/KolbySisk/designsystem.tools'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            Consider making a pull request
+          </a>
+          .
         </p>
       </>
     ),
@@ -27,12 +39,12 @@ export const intro = [
     content: (
       <>
         <p>
-          A design system is a collection of resources used to standardize design throughout an entire organization. It
-          acts as a single source of truth by documenting a design language which is used to create reusable resources.
+          A design system is a collection of resources used to standardize design throughout an organization. It acts as
+          a single source of truth by documenting a design language, which is used to create reusable resources.
         </p>
         <p>
-          There are many possible features that can compose a design system. In addition to the resources there are
-          other considerations
+          There are many possible features that can compose a design system. In addition to resources like design
+          guidelines and a component library, there are meta features like infrastructure and governance.
         </p>
       </>
     ),
@@ -56,8 +68,7 @@ export const intro = [
 
 export const featureDisclaimer = {
   title: 'Not all design systems are built the same',
-  description:
-    'The perfect design system for your organization might not require every feature described here. It may need more than what is described here. It’s important to learn about the features that could be part of your design system to determine what construct provides the most value to your organization.',
+  description: `The perfect design system for your organization might not require every feature described here. It may need more than what is described here. It's important to learn about the features that could be part of your design system to determine what construct provides the most value to your organization.`,
 }
 
 export const features: Feature[] = [
@@ -66,10 +77,16 @@ export const features: Feature[] = [
     title: 'Design language system',
     icon: <MdExplore />,
     description: (
-      <p>
-        The design language system is the foundation of a design system. It helps designers to create harmonious designs
-        resulting in an organization’s products having a consistent look and feel.
-      </p>
+      <>
+        <p>
+          The design language system is the foundation of a design system. It helps designers to create harmonious
+          designs resulting in an organization&apos;s products having a consistent look and feel.
+        </p>
+        <p>
+          It&apos;s an important foundation because every additional resource included in your design system will be
+          designed utilizing the design language.
+        </p>
+      </>
     ),
     features: [
       {
@@ -178,9 +195,9 @@ export const features: Feature[] = [
     icon: <MdImage />,
     description: (
       <p>
-        Design resources are a collection of resources that can be used during the design and development processes.
-        Providing these resources in a centralized location makes it easier to find resources when needed, and works as
-        a single source of truth.
+        Design resources is a collection of resources that can be used during the design and development processes.
+        Providing these resources in a centralized location makes it easier to find resources when needed, and helps
+        establish the design system as the single source of truth.
       </p>
     ),
     features: [
@@ -224,10 +241,10 @@ export const features: Feature[] = [
       <>
         <p className='mb-4'>
           The documentation system is a centralized hub where anyone in the organization can gain access to the
-          resources. It is most commonly in the form of a website.
+          resources.
         </p>
         <p>
-          Documentation is the key to a successful design system. It removes friction, creates excitment, and provides
+          Documentation is the key to a successful design system. It removes friction, creates excitement, and provides
           the information necessary to use the design system properly.
         </p>
       </>
@@ -277,9 +294,9 @@ export const features: Feature[] = [
     icon: <MdTrain />,
     description: (
       <p>
-        Code infrastructure refers to the echosystem that makes code available throughout an organization. If you decide
-        to roll your own component library, or just provide a theme, you’ll need a way for product engineers to pull
-        that code into their projects.
+        Code infrastructure refers to the ecosystem that makes code available throughout an organization. If you decide
+        to roll your own component library, or just provide a theme, you&apos;ll need a way for engineers to pull that
+        code into their projects.
       </p>
     ),
     features: [
@@ -334,8 +351,8 @@ export const features: Feature[] = [
         <p>The governance system should answer questions like:</p>
         <ul className='list-disc pl-8'>
           <li>who maintains the design system?</li>
-          <li>how/if others can contribute?</li>
-          <li>how quality is assessed and assured?</li>
+          <li>how do others contribute?</li>
+          <li>how is quality assessed and assured?</li>
         </ul>
       </>
     ),
