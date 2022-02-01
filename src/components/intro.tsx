@@ -6,7 +6,7 @@ import { intro } from '~/data'
 
 export const Intro: FC = () => {
   return (
-    <section className='space-y-16 bg-purp py-16 md:space-y-32 md:py-32'>
+    <section className='space-y-16 overflow-hidden bg-purp py-16 md:space-y-32 md:py-32'>
       <div className='container relative'>
         <div className='flex justify-end'>
           <div className='ml-8 md:absolute md:top-1/2 md:-translate-y-1/2'>
