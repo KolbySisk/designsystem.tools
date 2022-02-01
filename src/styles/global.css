@@ -1,0 +1,34 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body,
+#__next {
+  height: 100%;
+}
+
+html {
+  @apply scroll-smooth;
+  @apply selection:bg-gold;
+  @apply selection:text-dark;
+
+  @apply scrollbar-thin;
+  @apply scrollbar-thumb-medium;
+  @apply scrollbar-track-darker;
+}
+body {
+  @apply font-sans;
+  @apply text-light;
+  @apply text-xl;
+}
+h1 {
+  @apply text-white;
+  @apply text-4xl;
+  @apply font-bold;
+}
+h2 {
+  @apply text-white;
+  @apply text-3xl;
+  @apply font-bold;
+}
