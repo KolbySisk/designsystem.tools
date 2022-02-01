@@ -9,7 +9,7 @@ export const Intro: FC = () => {
     <section className='space-y-16 overflow-hidden bg-purp py-16 md:space-y-32 md:py-32'>
       <div className='container relative'>
         <div className='flex justify-end'>
-          <div className='ml-8 md:absolute md:top-1/2 md:-translate-y-1/2'>
+          <div className='md:absolute md:top-1/2 md:ml-8 md:-translate-y-1/2'>
             <div className='md:w-2/3 lg:w-1/2'>
               <Content title={intro[0].title}>
                 <div className='space-y-4'>{intro[0].content}</div>
@@ -23,7 +23,7 @@ export const Intro: FC = () => {
       </div>
       <div className='container relative'>
         <div className='flex'>
-          <div className='mr-8 flex justify-end md:absolute md:top-1/2 md:-translate-y-1/2'>
+          <div className='flex justify-end md:absolute md:top-1/2 md:mr-8 md:-translate-y-1/2'>
             <div className='md:w-2/3 lg:w-1/2'>
               <Content title={intro[1].title}>
                 <div className='space-y-4'>{intro[1].content}</div>
