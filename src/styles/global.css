@@ -34,3 +34,6 @@ h2 {
   @apply text-xl;
   @apply md:text-3xl;
 }
+a {
+  @apply underline;
+}

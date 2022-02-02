@@ -18,7 +18,7 @@ export const IconButton: FC<ButtonProps> = ({
 }) => {
   return (
     <a
-      className={`flex items-center rounded-md p-3 text-dark ${
+      className={`flex items-center rounded-md p-3 text-dark no-underline ${
         variant === 'normal' ? 'bg-gold hover:bg-yellow' : 'bg-light hover:bg-yellow'
       }`}
       {...props}

@@ -1,5 +1,8 @@
-import { FC } from 'react'
-import { MdAddCircle, MdArticle, MdConstruction } from 'react-icons/md'
+import { FC, useMemo, useState } from 'react'
+import { MdAddCircle, MdArrowRightAlt, MdArticle, MdClose, MdConstruction } from 'react-icons/md'
+import { useEventListener } from 'usehooks-ts'
+
+import { Dialog } from '@headlessui/react'
 
 import { featureDisclaimer, features } from '~/data'
 import { Feature, FeatureFeature, Resource } from '~/types'
@@ -53,7 +56,7 @@ const FeatureInfo: FC<{ feature: Feature }> = ({ feature }) => {
           <span>{feature.description}</span>
           <div className='space-y-4'>
             <h2>Features</h2>
-            <FeatureFeatureList featurefeatures={feature.features} />
+            <FeatureFeatureList featureFeatures={feature.features} />
           </div>
         </div>
         <div className='flex-1 space-y-8 md:space-y-16'>
@@ -110,23 +113,116 @@ const FeatureResourceList: FC<{ resources: Resource[]; variant: 'tools' | 'artic
   )
 }
 
-const FeatureFeatureList: FC<{ featurefeatures: FeatureFeature[] }> = ({ featurefeatures }) => {
-  const handleFeatureFeatureClick = () => {
-    alert('show modal')
+const FeatureFeatureList: FC<{ featureFeatures: FeatureFeature[] }> = ({ featureFeatures }) => {
+  const [selectedFeatureFeature, setSelectedFeatureFeature] = useState<FeatureFeature | null>(null)
+
+  const { previousFeatureFeature, nextFeatureFeature } = useMemo<{
+    previousFeatureFeature: FeatureFeature | null
+    nextFeatureFeature: FeatureFeature | null
+  }>(() => {
+    if (!selectedFeatureFeature) return { previousFeatureFeature: null, nextFeatureFeature: null }
+
+    const selectedFeatureFeatureIndex = featureFeatures.indexOf(selectedFeatureFeature)
+
+    const previousFeatureFeature =
+      selectedFeatureFeatureIndex === 0 ? null : featureFeatures[selectedFeatureFeatureIndex - 1]
+
+    const nextFeatureFeature =
+      selectedFeatureFeatureIndex === featureFeatures.length ? null : featureFeatures[selectedFeatureFeatureIndex + 1]
+
+    return { previousFeatureFeature, nextFeatureFeature }
+  }, [featureFeatures, selectedFeatureFeature])
+
+  const handleFeatureFeatureClick = (featureFeature: FeatureFeature) => {
+    setSelectedFeatureFeature(featureFeature)
   }
 
+  const handlePreviousFeatureFeatureClick = () => {
+    setSelectedFeatureFeature(previousFeatureFeature)
+  }
+  const handleNextFeatureFeatureClick = () => {
+    setSelectedFeatureFeature(nextFeatureFeature)
+  }
+
+  const handleDialogCloseClick = () => {
+    setSelectedFeatureFeature(null)
+  }
+
+  const handleKeyPress = (event: KeyboardEvent) => {
+    if (Boolean(selectedFeatureFeature)) {
+      if (event.key === 'ArrowRight' && nextFeatureFeature) setSelectedFeatureFeature(nextFeatureFeature)
+      else if (event.key === 'ArrowLeft' && previousFeatureFeature) setSelectedFeatureFeature(previousFeatureFeature)
+    }
+  }
+
+  useEventListener('keyup', handleKeyPress)
+
   return (
-    <ul className='space-y-4'>
-      {featurefeatures.map((featurefeature) => (
-        <li key={featurefeature.title}>
-          <button className='flex items-center space-x-2' onClick={handleFeatureFeatureClick}>
-            <span>
-              <MdAddCircle />
-            </span>
-            <p className='font-medium'>{featurefeature.title}</p>
-          </button>
-        </li>
-      ))}
-    </ul>
+    <>
+      <ul className='space-y-4'>
+        {featureFeatures.map((featureFeature) => (
+          <li key={featureFeature.title}>
+            <button className='flex items-center space-x-2' onClick={() => handleFeatureFeatureClick(featureFeature)}>
+              <span>
+                <MdAddCircle />
+              </span>
+              <p className='font-medium'>{featureFeature.title}</p>
+            </button>
+          </li>
+        ))}
+      </ul>
+
+      <Dialog
+        open={Boolean(selectedFeatureFeature)}
+        onClose={handleDialogCloseClick}
+        className='fixed inset-0 z-10 overflow-y-auto'
+      >
+        <Dialog.Overlay className='fixed inset-0 bg-dark opacity-50' />
+        <div className='flex min-h-screen items-center justify-center'>
+          <div className='relative mx-8 w-full max-w-2xl space-y-8 rounded-md bg-light p-8'>
+            <div className='flex items-center justify-between'>
+              <Dialog.Title className='text-dark'>{selectedFeatureFeature?.title}</Dialog.Title>
+              <button
+                className='flex h-8 w-8 items-center justify-center rounded-full bg-medium bg-opacity-20 text-dark text-opacity-50 focus:text-opacity-100 hover:bg-opacity-40 hover:text-opacity-100'
+                onClick={handleDialogCloseClick}
+              >
+                <MdClose />
+              </button>
+            </div>
+            <Dialog.Description as='div' className='text-dark'>
+              {selectedFeatureFeature?.description}
+            </Dialog.Description>
+
+            <div className='flex justify-between'>
+              <div>
+                {previousFeatureFeature && (
+                  <button
+                    className='flex items-center space-x-2 rounded-md bg-medium bg-opacity-20 p-2 text-sm font-medium text-dark hover:bg-opacity-40'
+                    onClick={handlePreviousFeatureFeatureClick}
+                  >
+                    <div className='hidden items-center md:flex'>
+                      [<MdArrowRightAlt className='rotate-180' />]
+                    </div>
+                    <span>{previousFeatureFeature.title}</span>
+                  </button>
+                )}
+              </div>
+
+              {nextFeatureFeature && (
+                <button
+                  className='flex items-center space-x-2 rounded-md bg-medium bg-opacity-20 p-2 text-sm font-medium text-dark hover:bg-opacity-40'
+                  onClick={handleNextFeatureFeatureClick}
+                >
+                  <span>{nextFeatureFeature.title}</span>
+                  <span className='hidden items-center md:flex'>
+                    [<MdArrowRightAlt />]
+                  </span>
+                </button>
+              )}
+            </div>
+          </div>
+        </div>
+      </Dialog>
+    </>
   )
 }
