@@ -517,14 +517,13 @@ export const features: Feature[] = [
             </p>
             <ul className='space-y-2'>
               <li>
-                Solitary (The Overlord) - A solitary model sees a one team make a system available, but with efforts
-                focused primarily on that team&apos;s needs.
+                Solitary - A single team produces the design system, but their efforts are focused primarily on their
+                own needs.
               </li>
               <li>
-                Centralized - A single, central design team produces and supports a system used by others as a part of
-                their job.
+                Centralized - A single team produces and supports the design system as a primary role of their job.
               </li>
-              <li>Federated - Designers from multiple product teams decide on the system together.</li>
+              <li>Federated - Multiple product teams contribute to the design system in a collaborative effort.</li>
             </ul>
           </div>
         ),
