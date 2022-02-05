@@ -33,6 +33,13 @@ const Home: NextPage = () => {
               alt: 'Everything you need to know about design systems, and the tools to build them.',
               type: 'image/jpg',
             },
+            {
+              url: 'https://designsystem.tools/og-designsystemtools-3.jpg',
+              width: 1200,
+              height: 1200,
+              alt: 'Everything you need to know about design systems, and the tools to build them.',
+              type: 'image/jpg',
+            },
           ],
         }}
         twitter={{
