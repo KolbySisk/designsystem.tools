@@ -14,13 +14,13 @@ const Home: NextPage = () => {
         description='This website aims to explain what design systems are, the advantages of building one, and the tools involved.'
         openGraph={{
           url: 'https://designsystem.tools/',
-          title: 'designsystems.tools',
+          title: 'designsystem.tools',
           description:
             'This website aims to explain what design systems are, the advantages of building one, and the tools involved.',
-          site_name: 'designsystems.tools',
+          site_name: 'designsystem.tools',
           images: [
             {
-              url: 'https://designsystems.tools/og-designsystemtools.jpg',
+              url: 'https://designsystem.tools/og-designsystemtools.jpg',
               width: 1200,
               height: 630,
               alt: 'Everything you need to know about design systems, and the tools to build them.',
