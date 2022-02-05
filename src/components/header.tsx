@@ -10,7 +10,7 @@ export const Header: FC = () => {
         <Image alt='' src='/header-bg.png' layout='fixed' width={2135} height={793} quality={100} priority />
       </div>
       <div className='flex flex-col items-center sm:absolute sm:left-1/2 sm:mt-52 sm:-translate-x-1/2'>
-        <div>
+        <div className='mb-2'>
           <Image
             alt='designsystem.tools logo'
             src='/logo.png'
@@ -21,10 +21,10 @@ export const Header: FC = () => {
             priority
           />
         </div>
-        <div>
+        <div className='flex flex-col items-center'>
           <div className='flex flex-col items-end'>
             <h1 className='text-4xl font-bold leading-8 sm:text-[5rem] sm:leading-[5rem]'>designsystem</h1>
-            <span className='text-gold sm:text-[2.5rem]'>.tools</span>
+            <span className='text-2xl text-gold sm:text-[2.5rem]'>.tools</span>
           </div>
           <p className='mt-8 w-4/5 border-l-4 border-gold p-4 text-lg sm:w-[500px] sm:text-xl'>{siteDescription}</p>
         </div>
