@@ -17,7 +17,7 @@ export const Intro: FC = () => {
             </div>
           </div>
           <div className='pointer-events-none hidden md:-mr-40 md:block lg:mr-0'>
-            <Image alt='' src='/intro-bg1.png' layout='fixed' width={847} height={608} quality={100} priority />
+            <Image alt='' src='/intro-bg1.png' layout='fixed' width={847} height={608} quality={100} />
           </div>
         </div>
       </div>
@@ -31,7 +31,7 @@ export const Intro: FC = () => {
             </div>
           </div>
           <div className='hidden md:-ml-60 md:block lg:ml-0'>
-            <Image alt='' src='/intro-bg2.png' layout='fixed' width={444} height={548} quality={100} priority />
+            <Image alt='' src='/intro-bg2.png' layout='fixed' width={444} height={548} quality={100} />
           </div>
         </div>
       </div>
