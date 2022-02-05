@@ -1,4 +1,5 @@
 import type { NextPage } from 'next'
+import Script from 'next/script'
 import { NextSeo } from 'next-seo'
 
 import { Features } from '~/components/features'
@@ -48,6 +49,16 @@ const Home: NextPage = () => {
           cardType: 'summary_large_image',
         }}
       />
+      <Script src='https://www.googletagmanager.com/gtag/js?id=G-013R48ZCGQ' strategy='afterInteractive' />
+      <Script id='google-analytics' strategy='afterInteractive'>
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){window.dataLayer.push(arguments);}
+          gtag('js', new Date());
+
+          gtag('config', 'G-013R48ZCGQ');
+        `}
+      </Script>
       <main>
         <Header />
         <Intro />
