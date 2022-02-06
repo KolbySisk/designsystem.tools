@@ -154,6 +154,10 @@ export const features: Feature[] = [
         link: 'https://www.taskade.com/templates/design/the-ultimate-design-system-checklist',
       },
       {
+        title: 'Figma Tokens',
+        link: 'https://jansix.at/resources/figma-tokens',
+      },
+      {
         title: 'Design Tokens (Figma plugin)',
         link: 'https://www.figma.com/community/plugin/888356646278934516/Design-Tokens',
       },
@@ -281,6 +285,10 @@ export const features: Feature[] = [
       {
         title: 'Mantine',
         link: 'https://mantine.dev/',
+      },
+      {
+        title: 'Radix',
+        link: 'https://www.radix-ui.com/',
       },
     ],
     articles: [
@@ -471,6 +479,10 @@ export const features: Feature[] = [
       {
         title: 'Nx',
         link: 'https://nx.dev/',
+      },
+      {
+        title: 'Turborepo',
+        link: 'https://turborepo.org/',
       },
       {
         title: 'CircleCI',
