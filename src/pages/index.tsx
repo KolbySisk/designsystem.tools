@@ -59,12 +59,12 @@ const Home: NextPage = () => {
           gtag('config', 'G-013R48ZCGQ');
         `}
       </Script>
+      <Header />
       <main>
-        <Header />
         <Intro />
         <Features />
-        <Footer />
       </main>
+      <Footer />
     </>
   )
 }

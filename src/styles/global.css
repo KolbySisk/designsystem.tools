@@ -32,7 +32,7 @@ h2 {
   @apply text-white;
   @apply font-bold;
   @apply text-xl;
-  @apply md:text-3xl;
+  @apply md:text-2xl;
 }
 a {
   @apply underline;
