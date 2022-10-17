@@ -154,6 +154,10 @@ export const features: Feature[] = [
         link: 'https://www.taskade.com/templates/design/the-ultimate-design-system-checklist',
       },
       {
+        title: 'Specify',
+        link: 'https://specifyapp.com',
+      },
+      {
         title: 'Figma Tokens',
         link: 'https://jansix.at/resources/figma-tokens',
       },
