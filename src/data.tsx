@@ -1,4 +1,4 @@
-import { MdExplore, MdExtension, MdImage, MdOutlineGavel, MdTopic, MdTrain } from 'react-icons/md'
+import { MdBarChart, MdExplore, MdExtension, MdImage, MdOutlineGavel, MdTopic, MdTrain } from 'react-icons/md'
 
 import { Feature } from '~/types'
 
@@ -570,6 +570,69 @@ export const features: Feature[] = [
       {
         title: 'Governance by design',
         link: 'https://rangle.io/blog/governance-by-design-building-successful-design-systems/',
+      },
+    ],
+  },
+  {
+    id: 'analytics',
+    title: 'Analytics',
+    icon: <MdBarChart />,
+    description: (
+      <div className='space-y-4'>
+        <p>
+          Analytics refers to the process of collecting and analyzing data related to the usage, performance, and
+          effectiveness of the design system — helping you answer questions like:
+        </p>
+        <ul className='list-disc pl-8'>
+          <li>did component adoption increase?</li>
+          <li>which team and projects are adopting components?</li>
+          <li>is the investment paying off?</li>
+        </ul>
+      </div>
+    ),
+    features: [
+      {
+        title: 'Dashboard',
+        description: (
+          <div className='space-y-4'>
+            <p>
+              An easily accessible, well documented analytics dashboard is crucial for any design system. It contains
+              metrics based on the objectives and key performance indicators (KPIs) of the system and the overall
+              business.
+            </p>
+          </div>
+        ),
+      },
+      {
+        title: 'Reporting',
+        description: (
+          <div className='space-y-4'>
+            <p>
+              Periodic reporting of design system metrics increases awareness and helps the team make informed,
+              proactive decisions.
+            </p>
+          </div>
+        ),
+      },
+    ],
+    tools: [
+      {
+        title: 'Omlet',
+        link: 'https://omlet.io',
+      },
+    ],
+    articles: [
+      {
+        title: 'Measuring the impact of a design system',
+        link: 'https://didoo.medium.com/measuring-the-impact-of-a-design-system-7f925af090f7',
+      },
+      {
+        title: 'Data driven design systems in practice',
+        link: 'https://omlet.dev/blog/data-driven-design-systems-in-practice/',
+      },
+      {
+        title: 'Measuring design system success',
+        link: 'https://medium.com/eightshapes-llc/measuring-design-system-success-d0513a93dd96',
       },
     ],
   },
